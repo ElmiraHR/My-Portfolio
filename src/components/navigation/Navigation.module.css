@@ -1,0 +1,142 @@
+.navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; /* Высота навигации */
+    background-image: url('../../assets/nav_bg.svg'); /* Путь к изображению */
+    background-size: 100vw 90px; /* Ширина 100% экрана, высота подгоняется */
+    background-repeat: no-repeat;
+    background-position: top center; /* Расположение фона */
+    padding: 0 20px;
+    margin-bottom: 30px; /* Отступ снизу */
+  }
+  
+  .logoContainer {
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-right: 42%;
+    padding: 0;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: #C4F4FF;
+    transition: color 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    color: #C4F4FF;
+  }
+  
+  .languageSwitcher {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Языки выравниваются справа */
+    flex-shrink: 0; /* Не даём языкам сжиматься */
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+
+  
+  .langBtn {
+    background: transparent;
+    color: #C4F4FF;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .burger {
+    display: none; /* Скрываем бургер на больших экранах */
+    cursor: pointer;
+  }
+  
+  .burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #C4F4FF;
+    margin: 5px 0;
+  }
+  @media (max-width: 1440px){
+    .menu{
+    margin-right: 40%;
+}
+  }
+  @media (max-width: 1200px){
+    .menu{
+    margin-right: 35%;
+}
+  }
+  @media (max-width: 990px){
+    .menu{
+    margin-right: 30%;
+}
+  }
+  /* Адаптивный дизайн для маленьких экранов */
+  @media (max-width: 768px) {
+    .navigation {
+      height: 80px; /* Сохраняем высоту навбара */
+      background-size: 100vw 50px;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+  
+    .menu {
+      display: none; /* Скрываем меню */
+    }
+  
+    .burger {
+      display: block; /* Показываем бургер */
+      cursor: pointer;
+      margin-left: auto; /* Перемещаем бургер вправо */
+      padding-top: 20px;
+    }
+  
+    .menuOpen {
+      display: flex !important; /* Показываем меню, если оно открыто */
+      flex-direction: column;
+      position: absolute;
+      top: 80px; /* Меню начинается сразу под навбаром */
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+      z-index: 10;
+      text-align: center;
+    }
+  
+    .menuOpen li {
+      margin: 10px 0;
+    }
+  
+    .menuOpen li a {
+      color: #C4F4FF;
+    }
+    .logo{
+        padding-top: 40px;
+        padding-left: 0;
+    }
+     
+  .languageSwitcher{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 0px;
+    left: 0%;
+  }
+  }
+  
