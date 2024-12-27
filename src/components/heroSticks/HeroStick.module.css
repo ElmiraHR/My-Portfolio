@@ -1,0 +1,116 @@
+.heroStick {
+    width: 295px;
+    height: 425px;
+    border-radius: 16px;
+    border: 2px solid #45D3F5;
+    background-color: rgba(6, 13, 23, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    animation: openBox 1s ease-in-out forwards;
+    position: absolute;
+    padding: 0 20px;
+  }
+  
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInText 2s 1s forwards;
+    font-size: 18px;
+    line-height: 32px;
+    padding-top: 30px;
+    text-align: left;
+  }
+  
+  .animatedText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #C4F4FF;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #C4F4FF;
+    width: 0;
+    animation: typing 2s steps(40, end), blink 0.5s step-end infinite alternate;
+  }
+  
+  .heroButton {
+    background-color: #45D3F5;
+    color: #060D17;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    animation: fadeInButton 1.5s 2s forwards;
+  }
+  
+  .heroButton:hover {
+    background-color: #34a9d3;
+  }
+
+  .heading {
+    font-size: 28px; /* Размер шрифта заголовка */
+    font-weight: bold; /* Жирность */
+    color: #C4F4FF; /* Цвет текста */
+    text-align: center; /* Выравнивание */
+    margin-top: 20px; /* Отступ снизу */
+  }
+  /* Анимации */
+  
+  @keyframes openBox {
+    0% {
+      width: 0;
+      height: 0;
+    }
+    50% {
+      width: 2px;
+      height: 425px;
+    }
+    100% {
+      width: 295px;
+      height: 425px;
+    }
+  }
+  
+  @keyframes fadeInText {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInButton {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    from {
+      border-right-color: #C4F4FF;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  
