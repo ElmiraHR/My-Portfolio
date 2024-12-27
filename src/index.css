@@ -1,10 +1,7 @@
 body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-background-color: #060D17;
-color: #C4F4FF;
+  padding: 0;
+  background-color: #060D17; /* Если нужен фон */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}

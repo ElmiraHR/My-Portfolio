@@ -16,6 +16,22 @@ const Navigation: React.FC = () => {
         <img src={logo} alt="Logo" className={styles.logo} />
       </div>
 
+      {/* Меню навигации */}
+      <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+
+      {/* Переключатель языков */}
+      <div className={styles.languageSwitcher}>
+        <button className={styles.langBtn}>De</button>
+        <button className={styles.langBtn}>En</button>
+        <button className={styles.langBtn}>Ru</button>
+      </div>
+
       {/* Бургер-меню (для маленьких экранов) */}
       <div
         className={styles.burger}
@@ -26,23 +42,14 @@ const Navigation: React.FC = () => {
         <span></span>
       </div>
 
-      {/* Меню навигации */}
-      <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-
-        {/* Языки внутри бургер-меню на маленьких экранах */}
-        {isMenuOpen && (
-          <div className={styles.languageSwitcher}>
-            <button className={styles.langBtn}>De</button>
-            <button className={styles.langBtn}>En</button>
-            <button className={styles.langBtn}>Ru</button>
-          </div>
-        )}
-      </ul>
+      {/* Языки внутри бургер-меню на маленьких экранах */}
+      {isMenuOpen && (
+        <div className={styles.languageSwitcherMobile}>
+          <button className={styles.langBtn}>De</button>
+          <button className={styles.langBtn}>En</button>
+          <button className={styles.langBtn}>Ru</button>
+        </div>
+      )}
     </nav>
   );
 };
