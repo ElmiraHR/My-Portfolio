@@ -16,7 +16,6 @@
   box-shadow: inset 50px 50px 450px #060D17; /* Внутренняя тень */
 }
 
-
 .content {
   position: relative;
   z-index: 1; /* Контент над видео */
@@ -42,11 +41,34 @@
   display: flex;
   justify-content: flex-start;
 }
+
 .stickRight{
   display: flex;
   justify-content: flex-end;
 }
+
+.heroButtons{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-wrap: nowrap;
+}
+@media (max-width: 1200px){
+  .stickRight{
+    margin-right: 40px;
+  }
+}
 @media (max-width: 768px){
+
+  .heroButtons{
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+  }
   .sticksContainer{
     padding: 0;
     margin: 0 auto;

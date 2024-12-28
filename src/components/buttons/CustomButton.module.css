@@ -1,0 +1,31 @@
+.customButton {
+    background-color: #060D17; /* Фон */
+    border: none;
+    border-radius: 16px; /* Радиус */
+    color: #C4F4FF; /* Цвет текста */
+    font-size: 16px; /* Размер текста */
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), /* Внешняя тень */
+                inset 0 1px 6px #45D3F5; /* Внутренняя тень */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 20px;
+  }
+  
+  .customButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.35),
+                inset 0 1px 6px #45D3F5;
+  }
+  
+  .customButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15),
+                inset 0 1px 6px #45D3F5;
+  }
+
+  @media (max-width: 768px){
+  .customButton {
+   margin: 10px;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import heroBanner from '../../assets/heroBanner.mp4'; // Импорт видео
 import styles from './HomePage.module.css'; // Импорт стилей
 import HeroStick from '../../components/heroSticks/HeroStick.tsx';
+import CustomButton from '../../components/buttons/CustomButton.tsx';
 
 const Home: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -54,6 +55,20 @@ const Home: React.FC = () => {
   onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
        />
        </div>
+      </div>
+      <div  className={styles.heroButtons}>
+        <CustomButton
+      width="200px"
+      text={"CV"}
+      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+      <CustomButton
+      width="250px"
+      text={"Recomandation Letters"}
+      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+      <CustomButton
+      width="200px"
+      text={"Certificats"}
+      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
       </div>
     </div>
   );

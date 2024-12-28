@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './HeroStick.module.css';
+import CustomButton from '../buttons/CustomButton.tsx';
 
 interface HeroStickProps {
     className?: string;
@@ -7,8 +8,7 @@ interface HeroStickProps {
   text: string; // Текст, который будет печататься внутри компонента
   buttonLabel: string; // Текст кнопки
   onButtonClick: () => void; // Действие при клике на кнопку
-  }; // Позиционирование компонента
-
+};
 
 const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onButtonClick}) => {
   const textRef = useRef<HTMLDivElement>(null);
@@ -48,9 +48,11 @@ const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onBut
     <div className={styles.heroStick} >
       <div className={styles.heading} ref={headingRef}>{heading}</div>
       <div className={styles.textContainer} ref={textRef}></div>
-      <button className={styles.heroButton} onClick={onButtonClick}>
-        {buttonLabel}
-      </button>
+      <CustomButton
+        width="200px"
+        text={buttonLabel}
+        onClick={onButtonClick}
+      />
     </div>
   );
 };
