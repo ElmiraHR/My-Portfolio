@@ -13,3 +13,4 @@ declare module '*.module.css' {
     export default src;
   }
   
+  declare module '*.tsx';

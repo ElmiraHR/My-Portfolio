@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES6", // Компилируем код в стандарт ES6
+      "module": "ESNext", // Используем современный модульный формат
+      "jsx": "react", // Поддержка JSX для React
+      "strict": true, // Включаем строгий режим
+      "esModuleInterop": true, // Совместимость с CommonJS
+      "skipLibCheck": true, // Пропускаем проверку типов библиотек
+      "forceConsistentCasingInFileNames": true ,// Регистрозависимость для файлов
+      "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["node_modules/*", "src/*"]
+    },
+    "allowJs": true,
+    },
+    "exclude": ["node_modules", "build"], // Исключаем ненужные папки
+    "include": ["src", "types", "src/global.d.ts"]
+  }
+  

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import heroBanner from '../../assets/heroBanner.mp4'; // Импорт видео
 import styles from './HomePage.module.css'; // Импорт стилей
-import HeroStick from '../../components/heroSticks/HeroStick.tsx';
-import CustomButton from '../../components/buttons/CustomButton.tsx';
+import HeroStick from '../../components/heroSticks/HeroStick';
+import CustomButton from '../../components/buttons/CustomButton';
 
 const Home: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);

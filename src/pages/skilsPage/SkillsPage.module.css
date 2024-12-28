@@ -1,0 +1,32 @@
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+  }
+  
+  .leftContainer,
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+  }
+  
+  .leftContainer {
+    align-items: center;
+   
+  }
+  
+  .rightContainer {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  @media (max-width: 992px){
+    .skillsContainer {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 auto;
+    }
+  }

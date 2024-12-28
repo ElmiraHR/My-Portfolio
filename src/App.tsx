@@ -1,6 +1,7 @@
 import React from 'react';
-import Navigation from './components/navigation/Navigation.tsx';
-import Home from './pages/homePage/HomePage.tsx';
+import Navigation from './components/navigation/Navigation';
+import Home from './pages/homePage/HomePage';
+import SkillsPage from './pages/skilsPage/SkillsPage';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Home/>
+      <SkillsPage/>
     </div>
   );
 }

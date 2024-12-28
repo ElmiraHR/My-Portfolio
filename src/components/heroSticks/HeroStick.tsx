@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './HeroStick.module.css';
-import CustomButton from '../buttons/CustomButton.tsx';
+import CustomButton from '../buttons/CustomButton';
 
 interface HeroStickProps {
     className?: string;
