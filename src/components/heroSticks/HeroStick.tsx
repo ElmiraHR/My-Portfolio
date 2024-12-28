@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styles from './HeroStick.module.css';
 
 interface HeroStickProps {
+    className?: string;
   heading: string; // Заголовок
   text: string; // Текст, который будет печататься внутри компонента
   buttonLabel: string; // Текст кнопки
@@ -11,6 +12,7 @@ interface HeroStickProps {
     left?: string;
     right?: string;
     bottom?: string;
+    
   }; // Позиционирование компонента
 }
 

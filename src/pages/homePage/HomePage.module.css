@@ -28,4 +28,11 @@
     font-size: 3rem;
     text-align: center;
   }
+
+  @media (max-width: 999px){
+   .rightStick{
+    position: relative;
+    top: 300px;
+   }
+  }
   

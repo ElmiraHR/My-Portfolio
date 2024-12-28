@@ -37,18 +37,20 @@ const Home: React.FC = () => {
       </video>
       <div className={styles.content}>
       <HeroStick
+      className="leftStick"
   heading="Hi there, I'm Elmira!"
   text="Welcome to my portfolio! I'm a web developer who loves turning creative ideas into functional, beautiful websites. Let’s explore the magic of clean code and captivating design together."
   buttonLabel="Explore My Work"
   onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-  position={{ top: '50px', left: '100px' }}
+  position={{ top: '10px', left: '15%' }}
       />
        <HeroStick
+  className="rightStick"
   heading="About This Site"
   text="This is where creativity meets functionality. Dive into my projects, explore my skills, and discover how I can help bring your ideas to life through modern web development and thoughtful design."
   buttonLabel="Let’s Collaborate"
   onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-  position={{ top: '150px', right: '100px' }}
+  position={{ top: '480px', right: '15%' }}
        />
       </div>
     </div>
