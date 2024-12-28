@@ -13,7 +13,7 @@
   height: 100%;
   object-fit: cover; /* Видео растягивается, сохраняя пропорции */
   z-index: -1; /* Помещаем видео под содержимое */
-  box-shadow: inset 150px 150px 450px #060D17; /* Внутренняя тень */
+  box-shadow: inset -1px -20px 9px 0px #060d17; /* Внутренняя тень */
 }
 
 .nextPage{
