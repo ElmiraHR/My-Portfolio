@@ -16,20 +16,25 @@ const SkillStick: React.FC<SkillStickProps> = ({ title, items, direction }) => {
       if (stickRef.current) {
         const rect = stickRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-
-        // Проверяем видимость элемента
+  
+        // Добавляем отступ для раннего исчезновения/появления
+        const offset = 100; // Отступ в пикселях
+  
+        // Проверяем видимость элемента с учётом отступа
         const isInView =
-          rect.top < windowHeight - rect.height / 2 && rect.bottom > rect.height / 2;
-
+          rect.top < windowHeight - rect.height / 2 - offset &&
+          rect.bottom > rect.height / 2 + offset;
+  
         setIsVisible(isInView);
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Проверяем начальное положение при монтировании
-
+  
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   return (
     <div
