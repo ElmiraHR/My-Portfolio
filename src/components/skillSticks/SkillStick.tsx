@@ -18,7 +18,7 @@ const SkillStick: React.FC<SkillStickProps> = ({ title, items, direction }) => {
         const windowHeight = window.innerHeight;
   
         // Добавляем отступ для раннего исчезновения/появления
-        const offset = 100; // Отступ в пикселях
+        const offset = 130; // Отступ в пикселях
   
         // Проверяем видимость элемента с учётом отступа
         const isInView =
