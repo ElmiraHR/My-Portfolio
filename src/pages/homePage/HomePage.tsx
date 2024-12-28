@@ -70,6 +70,7 @@ const Home: React.FC = () => {
       text={"Certificats"}
       onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
       </div>
+      <div className={styles.nextPage}></div>
     </div>
   );
 };

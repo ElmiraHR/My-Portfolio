@@ -4,6 +4,11 @@
     justify-content: space-between;
     padding: 40px;
     gap: 20px;
+    background-image: url("../../assets/girl.svg"), url("../../assets/vector.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: right center, left center; /* Первая картинка справа, вторая слева */
+    background-size: contain, contain;
+    background-size: 50% auto, 30%auto; /* Ширина первой картинки 400px, второй — 650px */
   }
   
   .leftContainer,

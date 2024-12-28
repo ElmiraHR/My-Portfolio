@@ -1,6 +1,6 @@
 .videoContainer {
   width: 100%;
-  min-height: 100vh; /* Гарантирует, что высота контейнера равна высоте экрана */
+  max-height:min-content; /* Гарантирует, что высота контейнера равна высоте экрана */
   position: relative;
   overflow: hidden; /* Удаляет любые лишние отступы */
 }
@@ -13,7 +13,16 @@
   height: 100%;
   object-fit: cover; /* Видео растягивается, сохраняя пропорции */
   z-index: -1; /* Помещаем видео под содержимое */
-  box-shadow: inset 50px 50px 450px #060D17; /* Внутренняя тень */
+  box-shadow: inset 150px 150px 450px #060D17; /* Внутренняя тень */
+}
+
+.nextPage{
+ display: flex;
+ justify-content: flex-end;
+ align-items: last baseline;
+height: 50px;
+width: 100vw;
+box-shadow: inset -20px -20px 9px 10px #060D17;
 }
 
 .content {
