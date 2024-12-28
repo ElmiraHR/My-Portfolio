@@ -22,7 +22,7 @@
  align-items: last baseline;
 height: 50px;
 width: 100vw;
-box-shadow: inset -20px -20px 9px 10px #060D17;
+box-shadow: inset 0px -19px 9px 10px #060d17;
 }
 
 .content {
