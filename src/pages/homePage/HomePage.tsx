@@ -35,23 +35,25 @@ const Home: React.FC = () => {
         <source src={heroBanner} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className={styles.content}>
+      <div className={styles.sticksContainer}>
+        <div className={styles.stickLeft}>
       <HeroStick
       className="leftStick"
   heading="Hi there, I'm Elmira!"
   text="Welcome to my portfolio! I'm a web developer who loves turning creative ideas into functional, beautiful websites. Let’s explore the magic of clean code and captivating design together."
   buttonLabel="Explore My Work"
   onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-  position={{ top: '10px', left: '15%' }}
       />
+      </div>
+      <div  className={styles.stickRight}>
        <HeroStick
   className="rightStick"
   heading="About This Site"
   text="This is where creativity meets functionality. Dive into my projects, explore my skills, and discover how I can help bring your ideas to life through modern web development and thoughtful design."
   buttonLabel="Let’s Collaborate"
   onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-  position={{ top: '480px', right: '15%' }}
        />
+       </div>
       </div>
     </div>
   );

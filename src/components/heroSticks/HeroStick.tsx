@@ -7,16 +7,10 @@ interface HeroStickProps {
   text: string; // Текст, который будет печататься внутри компонента
   buttonLabel: string; // Текст кнопки
   onButtonClick: () => void; // Действие при клике на кнопку
-  position?: {
-    top?: string;
-    left?: string;
-    right?: string;
-    bottom?: string;
-    
   }; // Позиционирование компонента
-}
 
-const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onButtonClick, position }) => {
+
+const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onButtonClick}) => {
   const textRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +45,7 @@ const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onBut
   }, [text]);
 
   return (
-    <div className={styles.heroStick} style={position}>
+    <div className={styles.heroStick} >
       <div className={styles.heading} ref={headingRef}>{heading}</div>
       <div className={styles.textContainer} ref={textRef}></div>
       <button className={styles.heroButton} onClick={onButtonClick}>

@@ -31,7 +31,14 @@ const Navigation: React.FC = () => {
         <button className={styles.langBtn}>En</button>
         <button className={styles.langBtn}>Ru</button>
       </div>
-
+ {/* Языки внутри бургер-меню на маленьких экранах */}
+ {isMenuOpen && (
+        <div className={styles.languageSwitcherMobile}>
+          <button className={styles.langBtn}>De</button>
+          <button className={styles.langBtn}>En</button>
+          <button className={styles.langBtn}>Ru</button>
+        </div>
+      )}
       {/* Бургер-меню (для маленьких экранов) */}
       <div
         className={styles.burger}
@@ -42,14 +49,7 @@ const Navigation: React.FC = () => {
         <span></span>
       </div>
 
-      {/* Языки внутри бургер-меню на маленьких экранах */}
-      {isMenuOpen && (
-        <div className={styles.languageSwitcherMobile}>
-          <button className={styles.langBtn}>De</button>
-          <button className={styles.langBtn}>En</button>
-          <button className={styles.langBtn}>Ru</button>
-        </div>
-      )}
+     
     </nav>
   );
 };
