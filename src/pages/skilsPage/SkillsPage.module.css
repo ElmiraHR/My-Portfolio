@@ -1,9 +1,10 @@
 .skillsContainer {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    gap: 20px;
+    gap: 40px;
     background-image: url("../../assets/girl.svg"), url("../../assets/vector.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: right center, left center; /* Первая картинка справа, вторая слева */
@@ -28,6 +29,48 @@
     justify-content: center;
   }
   
+   .socialLinks{
+    display: flex;
+    justify-content: flex-end;
+   }
+
+   /* Контейнер для заголовка */
+.sectionTitleContainer {
+    width: 295px; /* Ширина как у стиков */
+    height: 40px;
+    border-radius: 16px;
+    border: 2px solid #45D3F5;
+    background-color: rgba(69, 211, 245, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 4s ease, transform 4s ease;
+  }
+  
+  .sectionTitleContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sectionTitleContainer.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  
+  /* Стиль для заголовка */
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #C4F4FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+
   @media (max-width: 992px){
     .skillsContainer {
         flex-direction: column;

@@ -32,7 +32,12 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.videoContainer}>
-      <video ref={videoRef} muted className={styles.backgroundVideo}>
+      <video ref={videoRef} 
+      muted  
+      playsInline
+      autoPlay
+      loop 
+      className={styles.backgroundVideo}>
         <source src={heroBanner} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

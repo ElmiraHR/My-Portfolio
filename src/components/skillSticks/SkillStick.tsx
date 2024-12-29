@@ -4,7 +4,7 @@ import styles from "./SkillStick.module.css";
 interface SkillStickProps {
   title: string; // Заголовок
   items: string[]; // Список пунктов
-  direction: "left" | "right"; // Направление заезда
+  direction: "left" | "right" | "top"; // Направление заезда
 }
 
 const SkillStick: React.FC<SkillStickProps> = ({ title, items, direction }) => {
