@@ -77,10 +77,9 @@
         gap: 20px;
         margin: 0 auto;
     }
-  }
-  @media (max-width: 992px){
     .sectionTitleContainer{
         width: 80%;
         margin: 0 auto;
     }
   }
+ 
