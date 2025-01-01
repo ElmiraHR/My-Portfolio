@@ -16,13 +16,16 @@
   position: relative;
   height: 600px;
   width: 100%;
+  overflow: hidden; /* Убедитесь, что изображения не выходят за пределы */
 }
 
 .image {
   position: absolute;
-  top: 5px;
+  top: 50%; /* Центруем по вертикали */
+  left: 50%; /* Центруем по горизонтали */
+  transform: translate(-50%, -50%); /* Смещаем центр изображения */
   width: 80%; /* Изображения занимают 80% ширины контейнера */
-  height: 90%; /* Высота адаптируется пропорционально ширине */
+  height: auto; /* Высота будет адаптироваться пропорционально ширине */
   max-width: 340px;
   max-height: 458px;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -33,21 +36,22 @@
 }
 
 .image.active {
-  transform: scale(1.2);
+  transform: translate(-50%, -50%) scale(1.2); /* Увеличиваем с центровкой */
   opacity: 1;
   filter: blur(0);
   z-index: 100;
 }
 
 .image.left {
-  transform: translateX(-400px) scale(0.8);
+  transform: translate(calc(-50% - 400px), -50%) scale(0.8); /* Смещаем влево */
   z-index: 10;
 }
 
 .image.right {
-  transform: translateX(400px) scale(0.8);
+  transform: translate(calc(-50% + 400px), -50%) scale(0.8); /* Смещаем вправо */
   z-index: 10;
 }
+
 
 .image.hidden {
   opacity: 0;
@@ -84,8 +88,8 @@
 
 .prevButton,
 .nextButton {
-  background-color: #c4f4ff; /* Цвет кружков */
-  color: #060d17; /* Цвет стрелок */
+  background-color: #060d17; /* Цвет кружков */
+  color: #c4f4ff ; /* Цвет стрелок */
   border: none;
   width: 50px;
   height: 50px;
@@ -95,7 +99,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9; /* Прозрачность 80% */
   z-index: 200; /* Поверх изображений */
 }
 
@@ -140,7 +145,8 @@
   .buttons {
     display: flex; /* Кнопки остаются */
     justify-content: space-between;
-    width: 80%; /* Ограничиваем ширину кнопок */
+    width: 95%; /* Ограничиваем ширину кнопок */
+    opacity: 0.9;
   }
 
   .prevButton,
