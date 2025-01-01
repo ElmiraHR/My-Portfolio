@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 90%;
+  width: 95%;
   overflow: hidden;
   animation: fadeIn 2s ease-in-out; /* Появление с прозрачности */
 }
@@ -28,11 +28,13 @@
   height: auto; /* Высота будет адаптироваться пропорционально ширине */
   max-width: 340px;
   max-height: 458px;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.8s ease, 
+              filter 0.8s ease; /* Плавные переходы */
   opacity: 0.5;
   filter: blur(3px);
   box-shadow: 1px 1px 10px 5px #c4f4ff;
-  z-index: 1; /* Обновление z-индекса */
+  z-index: 1;
 }
 
 .image.active {
@@ -44,17 +46,19 @@
 
 .image.left {
   transform: translate(calc(-50% - 400px), -50%) scale(0.8); /* Смещаем влево */
+  opacity: 0.7;
   z-index: 10;
 }
 
 .image.right {
   transform: translate(calc(-50% + 400px), -50%) scale(0.8); /* Смещаем вправо */
+  opacity: 0.7;
   z-index: 10;
 }
 
-
 .image.hidden {
   opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5); /* Уменьшаем и прячем */
 }
 
 .pagination {
@@ -106,7 +110,8 @@
 
 .prevButton:hover,
 .nextButton:hover {
-  background-color: #a3e2ff; /* Светлее кружков при наведении */
+  background-color: #0f1f34; /* Светлее кружков при наведении */
+  box-shadow: 0px 2px 10px 2px #c4f4ff;
   transform: scale(1.1); /* Небольшое увеличение кнопки */
 }
 
@@ -166,7 +171,8 @@
     width: 8px; /* Уменьшаем размер точек */
     height: 8px;
   }
-  .carouselWrapper{
+
+  .carouselWrapper {
     height: 450px;
   }
 }
