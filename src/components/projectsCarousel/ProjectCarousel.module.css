@@ -1,0 +1,166 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out; /* Появление с прозрачности */
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+
+.image {
+  position: absolute;
+  top: 5px;
+  width: 80%; /* Изображения занимают 80% ширины контейнера */
+  height: 90%; /* Высота адаптируется пропорционально ширине */
+  max-width: 340px;
+  max-height: 458px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.5;
+  filter: blur(3px);
+  box-shadow: 1px 1px 10px 5px #c4f4ff;
+  z-index: 1; /* Обновление z-индекса */
+}
+
+.image.active {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 100;
+}
+
+.image.left {
+  transform: translateX(-400px) scale(0.8);
+  z-index: 10;
+}
+
+.image.right {
+  transform: translateX(400px) scale(0.8);
+  z-index: 10;
+}
+
+.image.hidden {
+  opacity: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c4f4ff; /* Цвет кружков */
+  opacity: 0.5;
+}
+
+.activeDot {
+  opacity: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200; /* Кнопки всегда поверх всего */
+}
+
+.prevButton,
+.nextButton {
+  background-color: #c4f4ff; /* Цвет кружков */
+  color: #060d17; /* Цвет стрелок */
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%; /* Круглая форма */
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 200; /* Поверх изображений */
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  background-color: #a3e2ff; /* Светлее кружков при наведении */
+  transform: scale(1.1); /* Небольшое увеличение кнопки */
+}
+
+.prevButton::before {
+  content: "←"; /* Левая стрелка */
+}
+
+.nextButton::before {
+  content: "→"; /* Правая стрелка */
+}
+
+/* Анимация появления карусели */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Медиазапрос для маленьких экранов */
+@media (max-width: 992px) {
+  .image {
+    width: 70%; /* Уменьшаем изображения */
+    max-width: 250px;
+    max-height: 350px;
+    filter: none; /* Убираем блюр для лучшей читаемости */
+  }
+
+  .image.left,
+  .image.right {
+    display: none; /* Прячем боковые изображения */
+  }
+
+  .buttons {
+    display: flex; /* Кнопки остаются */
+    justify-content: space-between;
+    width: 80%; /* Ограничиваем ширину кнопок */
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .pagination {
+    display: flex; /* Оставляем точки пагинации */
+    justify-content: center;
+    gap: 8px; /* Немного уменьшаем расстояние между точками */
+  }
+
+  .dot {
+    width: 8px; /* Уменьшаем размер точек */
+    height: 8px;
+  }
+  .carouselWrapper{
+    height: 450px;
+  }
+}

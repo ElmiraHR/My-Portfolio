@@ -1,15 +1,20 @@
 .section {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  .section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .hidden {
-    opacity: 0;
-  }
-  
+  opacity: 1; /* Убедитесь, что элементы видимы */
+  visibility: visible;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Занимают весь экран */
+  width: 100vw;
+}
+
+
+.section.visible {
+  opacity: 1; /* Показываем секцию */
+  transform: translateY(0); /* Возвращаем в исходное положение */
+}
+
+
+.hidden {
+  opacity: 0; /* Делает элементы невидимыми */
+  visibility: hidden; /* Удаляет из видимости, но сохраняет место */
+}
