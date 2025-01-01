@@ -23,14 +23,14 @@
   position: absolute;
   top: 50%; /* Центруем по вертикали */
   left: 50%; /* Центруем по горизонтали */
-  transform: translate(-50%, -50%); /* Смещаем центр изображения */
+  transform: translate(-50%, -50%) scale(0.8); /* Смещение и уменьшение по умолчанию */
   width: 80%; /* Изображения занимают 80% ширины контейнера */
   height: auto; /* Высота будет адаптироваться пропорционально ширине */
   max-width: 340px;
   max-height: 458px;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.8s ease, 
-              filter 0.8s ease; /* Плавные переходы */
+              opacity 0.8s ease-in-out, 
+              filter 0.8s ease-in-out; /* Плавные переходы */
   opacity: 0.5;
   filter: blur(3px);
   box-shadow: 1px 1px 10px 5px #c4f4ff;
@@ -93,7 +93,7 @@
 .prevButton,
 .nextButton {
   background-color: #060d17; /* Цвет кружков */
-  color: #c4f4ff ; /* Цвет стрелок */
+  color: #c4f4ff; /* Цвет стрелок */
   border: none;
   margin-left: 15px;
   margin-right: 15px;
@@ -107,7 +107,7 @@
   justify-content: center;
   transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.9; /* Прозрачность 80% */
-  z-index: 200; /* Поверх изображений */
+  z-index: 200;
 }
 
 .prevButton:hover,
@@ -125,7 +125,6 @@
   content: "→"; /* Правая стрелка */
 }
 
-/* Анимация появления карусели */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -141,12 +140,18 @@
     width: 70%; /* Уменьшаем изображения */
     max-width: 250px;
     max-height: 350px;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Добавляем анимацию прозрачности */
     filter: none; /* Убираем блюр для лучшей читаемости */
   }
 
-  .image.left,
-  .image.right {
-    display: none; /* Прячем боковые изображения */
+  .image.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Небольшое увеличение для выделения */
+  }
+
+  .image.hidden {
+    opacity: 0; /* Прячем через прозрачность */
+    transform: translate(-50%, -50%) scale(0.9); /* Немного уменьшаем */
   }
 
   .buttons {
@@ -166,7 +171,7 @@
   .pagination {
     display: flex; /* Оставляем точки пагинации */
     justify-content: center;
-    gap: 8px; /* Немного уменьшаем расстояние между точками */
+    gap: 8px;
   }
 
   .dot {

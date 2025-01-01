@@ -35,7 +35,8 @@ const ProjectCarousel: React.FC = () => {
           const isActive = index === currentIndex;
           const isLeft =
             index === (currentIndex - 1 + projects.length) % projects.length;
-          const isRight = index === (currentIndex + 1) % projects.length;
+          const isRight =
+            index === (currentIndex + 1) % projects.length;
 
           return (
             <img
