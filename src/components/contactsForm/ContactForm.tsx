@@ -81,7 +81,7 @@ const ContactForm: React.FC = () => {
           <a href="https://www.xing.com/profile/Elmira_Hrachyan">Xing Profile</a>
         </p>
         <p>
-          Telegram: <a href="https://t.me/@Elka_Hr_997">@Elka_Hr_997</a>
+          Telegram: <a href="https://t.me/Elka_Hr_997">@Elka_Hr_997</a>
         </p>
       </div>
     </div>
