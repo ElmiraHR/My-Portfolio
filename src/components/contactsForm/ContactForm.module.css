@@ -1,0 +1,224 @@
+.contactContainer {
+    background-image: url("../../assets/contacts_bg.svg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #c4f4ff;
+    position: relative;
+  }
+  
+  .contactTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #c4f4ff;
+  }
+  
+  .decorativeLine {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    height: 80px;
+    width: 100vw; /* Растягиваем по ширине экрана */
+    z-index: 100; /* Убедитесь, что изображение всегда сверху */
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  .formWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .formWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: visible; /* Разрешаем теням быть видимыми за пределами контейнера */
+  }
+  
+  .form {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #c4f4ff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 500px;
+    transform: scaleY(0); /* Начальное состояние формы */
+    transform-origin: top; /* Точка открытия сверху */
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    margin: 20px 0; /* Внешние отступы для предотвращения срезания тени */
+  }
+  
+  .open .form {
+    transform: scaleY(1); /* Полное раскрытие формы */
+    opacity: 1;
+  }
+  
+  .close .form {
+    transform: scaleY(0); /* Закрытие формы */
+    opacity: 0;
+  }
+  
+  
+  .input,
+  .textarea {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #c4f4ff;
+    background: transparent;
+    color: #c4f4ff;
+    font-size: 1rem;
+  }
+  
+  .input::placeholder,
+  .textarea::placeholder {
+    color: #c4f4ff;
+  }
+  
+  .textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+
+  .contactInfo {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .contactInfo a {
+    color: #c4f4ff;
+    text-decoration: none;
+  }
+  
+  .contactInfo a:hover {
+    text-decoration: underline;
+  }
+  
+    /* Контейнер для заголовка */
+.sectionTitleContainer {
+    width: 255px; /* Ширина как у стиков */
+    height: 40px;
+    border-radius: 16px;
+    border: 2px solid #45D3F5;
+    background-color: rgba(69, 211, 245, 0.1);
+    padding: 20px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+  }
+  
+  
+  
+  /* Стиль для заголовка */
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #C4F4FF;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  
+/* Анимация линии */
+@keyframes openLine {
+    0% {
+      width: 0; /* Линия начинается с нуля */
+    }
+    100% {
+      width: 100%; /* Полная ширина формы */
+    }
+  }
+  
+  /* Анимация раскрытия формы вниз */
+  @keyframes openForm {
+    0% {
+      height: 0; /* Начальная высота */
+    }
+    100% {
+      height: 400px; /* Полная высота формы */
+    }
+  }
+  
+  /* Анимация закрытия формы */
+  @keyframes closeForm {
+    0% {
+      height: 400px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  
+  @keyframes closeLine {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  /* Анимация появления содержимого */
+  @keyframes fadeInForm {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px); /* Легкое смещение вверх */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Возврат к исходной позиции */
+    }
+  }
+
+  /* Медиазапрос для планшетов (до 992px) */
+@media (max-width: 992px) {
+    .contactContainer {
+      padding: 15px;
+      margin: 0 auto;
+      justify-content: flex-start;
+     
+    }
+  
+    .form {
+      width: 100%; /* Форма занимает всю ширину */
+      max-width: 70%; /* Ограничиваем максимальную ширину */
+      padding: 20px; /* Уменьшаем внутренние отступы */
+      gap: 10px; /* Уменьшаем расстояние между элементами */
+    }
+  
+    .sectionTitleContainer {
+      width: 60%; /* Уменьшаем ширину контейнера заголовка */
+      padding: 15px;
+    }
+  
+    .sectionTitle {
+      font-size: 20px; /* Уменьшаем размер шрифта заголовка */
+    }
+  
+    .input,
+    .textarea {
+      font-size: 0.9rem; /* Уменьшаем размер шрифта */
+    }
+  }
+  
+

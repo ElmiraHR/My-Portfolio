@@ -11,13 +11,16 @@
   }
   
   .pageTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: rgba(6, 13, 23, 0.75);
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 295px; /* Ширина как у стиков */
+    height: 40px;
+    border-radius: 16px;
+    border: 2px solid #45D3F5;
+    background-color: rgba(69, 211, 245, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 50px;
   }
   
