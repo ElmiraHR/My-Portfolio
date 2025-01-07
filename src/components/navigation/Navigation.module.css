@@ -9,7 +9,6 @@
   background-repeat: no-repeat;
   background-position: top center; /* Расположение фона */
   padding: 0 20px;
- 
 }
 
 .logoContainer {
@@ -19,12 +18,13 @@
 .logo {
   height: 50px;
   cursor: pointer;
+  margin-left: 40px;
 }
 
 .menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 25px;
   margin: 0 auto; /* Центрируем меню */
   padding: 0;
   justify-content: center; /* Центрируем содержимое меню */
@@ -44,22 +44,29 @@
 
 .languageSwitcher {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  justify-content: flex-end; /* Языки выравниваются справа */
-  position: relative;
-  right: 0;
-  flex-shrink: 0;
+  margin-top: 10px; /* Чтобы блок был отделён от ссылок */
+ 
 }
 
-.languageSwitcherMobile {
-  display: none; /* Скрываем языки внутри бургер-меню на больших экранах */
+.menuOpen .languageSwitcher {
+  display: flex; /* Показываем переключатель только в открытом бургер-меню */
 }
+
 
 .langBtn {
   background: transparent;
   color: #C4F4FF;
   border: none;
   cursor: pointer;
+  border: 0.5px solid #C4F4FF;
+  border-radius: 5px;
+}
+
+.langBtn:hover{
+  box-shadow: 0 0 5px #C4F4FF;
 }
 
 .burger {
@@ -72,8 +79,18 @@
   width: 25px;
   height: 3px;
   background-color: #C4F4FF;
-  margin: 5px 0;
+  margin: 5px 20px;
 }
+
+@media (max-width: 992px){
+ .menu li a  {
+  font-size: 12px;
+ }
+ .logo{
+  margin-left: 20px;
+ }
+}
+
 
 /* Адаптивный дизайн для маленьких экранов */
 @media (max-width: 768px) {
@@ -109,7 +126,7 @@
   }
 
   .menuOpen li {
-    margin: 10px 0;
+    margin: 5px 0;
     cursor: pointer;
   }
 

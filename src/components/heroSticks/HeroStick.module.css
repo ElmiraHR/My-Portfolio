@@ -66,6 +66,7 @@
   color: #C4F4FF; /* Цвет текста */
   text-align: center; /* Выравнивание */
   margin-top: 20px; /* Отступ снизу */
+  text-wrap: nowrap;
 }
 /* Анимации */
 

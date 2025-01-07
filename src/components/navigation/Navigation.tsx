@@ -1,13 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.css';
 import navBg from '../../assets/nav_bg.svg';
 import logo from '../../assets/logo_el.svg';
 
 const Navigation: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  // Обработчик клика вне меню
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setMenuOpen(false); // Закрыть меню, если клик произошёл вне навигации
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isMenuOpen]);
+
+  // Функция для закрытия меню при клике на ссылку
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav
+      ref={navRef}
+      key={i18n.language}
       className={styles.navigation}
       style={{ backgroundImage: `url(${navBg})` }}
     >
@@ -18,28 +47,45 @@ const Navigation: React.FC = () => {
 
       {/* Меню навигации */}
       <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="#home" onClick={handleLinkClick}>{t('navigation.home')}</a></li>
+        <li><a href="#about" onClick={handleLinkClick}>{t('navigation.about')}</a></li>
+        <li><a href="#skills" onClick={handleLinkClick}>{t('navigation.skills')}</a></li>
+        <li><a href="#projects" onClick={handleLinkClick}>{t('navigation.projects')}</a></li>
+        <li><a href="#contacts" onClick={handleLinkClick}>{t('navigation.contacts')}</a></li>
+        
+        {/* Переключатель языков */}
+        <div className={styles.languageSwitcher}>
+          <button
+            className={styles.langBtn}
+            onClick={() => {
+              i18n.changeLanguage('de');
+              setMenuOpen(false);
+            }}
+          >
+            De
+          </button>
+          <button
+            className={styles.langBtn}
+            onClick={() => {
+              i18n.changeLanguage('en');
+              setMenuOpen(false);
+            }}
+          >
+            En
+          </button>
+          <button
+            className={styles.langBtn}
+            onClick={() => {
+              i18n.changeLanguage('ru');
+              setMenuOpen(false);
+            }}
+          >
+            Ru
+          </button>
+        </div>
       </ul>
 
-      {/* Переключатель языков */}
-      <div className={styles.languageSwitcher}>
-        <button className={styles.langBtn}>De</button>
-        <button className={styles.langBtn}>En</button>
-        <button className={styles.langBtn}>Ru</button>
-      </div>
- {/* Языки внутри бургер-меню на маленьких экранах */}
- {isMenuOpen && (
-        <div className={styles.languageSwitcherMobile}>
-          <button className={styles.langBtn}>De</button>
-          <button className={styles.langBtn}>En</button>
-          <button className={styles.langBtn}>Ru</button>
-        </div>
-      )}
-      {/* Бургер-меню (для маленьких экранов) */}
+      {/* Бургер-меню */}
       <div
         className={styles.burger}
         onClick={() => setMenuOpen((prev) => !prev)}
@@ -48,8 +94,6 @@ const Navigation: React.FC = () => {
         <span></span>
         <span></span>
       </div>
-
-     
     </nav>
   );
 };

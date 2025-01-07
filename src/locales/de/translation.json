@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contacts": "Kontakte"
+  },
+
+  "homepage": {
+    "headingLeft": "Hallo, ich bin Elmira!",
+    "textLeft": "Willkommen! Ich bin eine Webentwicklerin, die kreative Ideen in funktionale und schöne Websites verwandelt. Lassen Sie uns gemeinsam die Magie von sauberem Code und Design entdecken.",
+    "buttonLeft": "Meine Arbeiten",
+    "headingRight": "Über diese Seite",
+    "textRight": "Hier trifft Kreativität auf Funktionalität. Erkunden Sie meine Fähigkeiten und entdecken Sie, wie ich Ihnen helfen kann, Ihre Ideen mit moderner Webentwicklung und durchdachtem Design zum Leben zu erwecken.",
+    "buttonRight": "Zusammenarbeiten",
+    "cvButton": "Lebenslauf",
+    "recommendationLettersButton": "Empfehlungsschreiben",
+    "certificatesButton": "Zertifikate"
+  }
+}

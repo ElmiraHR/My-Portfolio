@@ -43,6 +43,7 @@
   font-weight: bold;
   color: #45d3f5;
   margin-bottom: 10px;
+  text-wrap: nowrap;
 }
 
 /* Список пунктов */

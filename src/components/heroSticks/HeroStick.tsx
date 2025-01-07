@@ -3,14 +3,20 @@ import styles from './HeroStick.module.css';
 import CustomButton from '../buttons/CustomButton';
 
 interface HeroStickProps {
-    className?: string;
+  className?: string; // Дополнительный класс
   heading: string; // Заголовок
   text: string; // Текст, который будет печататься внутри компонента
   buttonLabel: string; // Текст кнопки
   onButtonClick: () => void; // Действие при клике на кнопку
-};
+}
 
-const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onButtonClick}) => {
+const HeroStick: React.FC<HeroStickProps> = ({
+  className,
+  heading,
+  text,
+  buttonLabel,
+  onButtonClick,
+}) => {
   const textRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +33,10 @@ const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onBut
     }
 
     // Анимация текста
+    if (textRef.current) {
+      textRef.current.innerHTML = ''; // Очищаем контейнер перед началом анимации
+    }
+
     const stringArray = text.split('');
     let typingIndex = 0;
 
@@ -42,17 +52,15 @@ const HeroStick: React.FC<HeroStickProps> = ({ heading, text, buttonLabel, onBut
     const typingInterval = setInterval(typeChar, 30); // Скорость печати символов
 
     return () => clearInterval(typingInterval);
-  }, [text]);
+  }, [text]); // Зависимость от текста: анимация перезапускается при смене текста
 
   return (
-    <div className={styles.heroStick} >
-      <div className={styles.heading} ref={headingRef}>{heading}</div>
+    <div className={`${styles.heroStick} ${className || ''}`}>
+      <div className={styles.heading} ref={headingRef}>
+        {heading}
+      </div>
       <div className={styles.textContainer} ref={textRef}></div>
-      <CustomButton
-        width="200px"
-        text={buttonLabel}
-        onClick={onButtonClick}
-      />
+      <CustomButton width="200px" text={buttonLabel} onClick={onButtonClick} />
     </div>
   );
 };

@@ -10,21 +10,26 @@ const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = formRef.current;
+  
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting); // Проверяем, видна ли форма
       },
-      { threshold: 0.1 } // Срабатывает, если видно хотя бы 10% формы
+      { threshold: 0.1 }
     );
-
-    if (formRef.current) {
-      observer.observe(formRef.current);
+  
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
     return () => {
-      if (formRef.current) observer.unobserve(formRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
   }, []);
+  
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

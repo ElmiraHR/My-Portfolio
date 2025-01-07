@@ -1,81 +1,110 @@
-import React, { useEffect, useRef } from 'react';
-import heroBanner from '../../assets/heroBanner.mp4'; // Импорт видео
-import styles from './HomePage.module.css'; // Импорт стилей
-import HeroStick from '../../components/heroSticks/HeroStick';
-import CustomButton from '../../components/buttons/CustomButton';
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import Modal from "react-modal";
+import heroBanner from "../../assets/heroBanner.mp4";
+import styles from "./HomePage.module.css";
+import HeroStick from "../../components/heroSticks/HeroStick";
+import CustomButton from "../../components/buttons/CustomButton";
+import PDFCarousel from "../../components/pdfCarousel/PDFCarousel";
+
+// Пример PDF-файлов
+const cvFiles = ["/pdfs/cv1.pdf", "/pdfs/cv2.pdf"];
+const recommendationFiles = ["/pdfs/rec1.pdf", "/pdfs/rec2.pdf"];
+const certificateFiles = ["/pdfs/cert1.pdf", "/pdfs/cert2.pdf"];
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [modalContent, setModalContent] = useState<string[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
 
-    // Функция для перезапуска видео
-    const restartVideo = () => {
-      if (video) {
-        video.currentTime = 0; // Сброс времени видео
-        video.play();          // Воспроизведение
-      }
-    };
-
-    // Запуск видео при загрузке компонента
     if (video) {
-      restartVideo();
-
-      // Перезапуск каждые 7 секунд
-      const interval = setInterval(restartVideo, 9000);
-
-      // Очистка интервала при размонтировании
+      video.currentTime = 0;
+      video.play();
+      const interval = setInterval(() => {
+        video.currentTime = 0;
+        video.play();
+      }, 9000);
       return () => clearInterval(interval);
     }
   }, []);
 
+  const openModal = (files: string[]) => {
+    setModalContent(files);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.videoContainer}>
-      <video ref={videoRef} 
-      muted  
-      playsInline
-      autoPlay
-      loop 
-      className={styles.backgroundVideo}>
+      <video
+        ref={videoRef}
+        muted
+        playsInline
+        autoPlay
+        loop
+        className={styles.backgroundVideo}
+      >
         <source src={heroBanner} type="video/mp4" />
-        Your browser does not support the video tag.
+        {t("homepage.videoFallback")}
       </video>
       <div className={styles.sticksContainer}>
         <div className={styles.stickLeft}>
-      <HeroStick
-      className="leftStick"
-  heading="Hi there, I'm Elmira!"
-  text="Welcome to my portfolio! I'm a web developer who loves turning creative ideas into functional, beautiful websites. Let’s explore the magic of clean code and captivating design together."
-  buttonLabel="Explore My Work"
-  onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-      />
+          <HeroStick
+            className="leftStick"
+            heading={t("homepage.headingLeft")}
+            text={t("homepage.textLeft")}
+            buttonLabel={t("homepage.buttonLeft")}
+            onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
+          />
+        </div>
+        <div className={styles.stickRight}>
+          <HeroStick
+            className="rightStick"
+            heading={t("homepage.headingRight")}
+            text={t("homepage.textRight")}
+            buttonLabel={t("homepage.buttonRight")}
+            onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
+          />
+        </div>
       </div>
-      <div  className={styles.stickRight}>
-       <HeroStick
-  className="rightStick"
-  heading="About This Site"
-  text="This is where creativity meets functionality. Dive into my projects, explore my skills, and discover how I can help bring your ideas to life through modern web development and thoughtful design."
-  buttonLabel="Let’s Collaborate"
-  onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-       />
-       </div>
-      </div>
-      <div  className={styles.heroButtons}>
+      <div className={styles.heroButtons}>
         <CustomButton
-      width="200px"
-      text={"CV"}
-      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
-      <CustomButton
-      width="250px"
-      text={"Recomandation Letters"}
-      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
-      <CustomButton
-      width="200px"
-      text={"Certificats"}
-      onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+          width="200px"
+          text={t("homepage.cvButton")}
+          onClick={() => openModal(cvFiles)}
+        />
+        <CustomButton
+          width="250px"
+          text={t("homepage.recommendationLettersButton")}
+          onClick={() => openModal(recommendationFiles)}
+        />
+        <CustomButton
+          width="200px"
+          text={t("homepage.certificatesButton")}
+          onClick={() => openModal(certificateFiles)}
+        />
       </div>
       <div className={styles.nextPage}></div>
+      {/* Модальное окно */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        className={styles.modal}
+        overlayClassName={styles.modalOverlay}
+        contentLabel="PDF Viewer Modal"
+      >
+        <PDFCarousel pdfFiles={modalContent} />
+        <button onClick={closeModal} className={styles.closeButton}>
+          Close
+        </button>
+      </Modal>
     </div>
   );
 };

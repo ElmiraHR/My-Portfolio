@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contacts": "Contacts"
+  },
+
+  "homepage": {
+    "headingLeft": "Hi there, I'm Elmira!",
+    "textLeft": "Welcome to my portfolio! I'm a web developer who loves turning creative ideas into functional, beautiful websites. Let’s explore the magic of clean code and captivating design together.",
+    "buttonLeft": "Explore My Work",
+    "headingRight": "About This Site",
+    "textRight": "This is where creativity meets functionality. Dive into my projects, explore my skills, and discover how I can help bring your ideas to life through modern web development and thoughtful design.",
+    "buttonRight": "Let’s Collaborate",
+    "cvButton": "CV",
+    "recommendationLettersButton": "Recommendation Letters",
+    "certificatesButton": "Certificates"
+  }
+}
