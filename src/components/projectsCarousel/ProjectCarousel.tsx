@@ -6,6 +6,7 @@ import herren from "../../assets/herren.svg";
 import myPortfolio from "../../assets/myPortfolio.svg";
 import petShop from "../../assets/petShop.svg";
 import mntn from "../../assets/mntn.svg";
+import insta from "../../assets/insta.svg";
 
 const projects = [
   { id: 1, image: meetup },
@@ -13,6 +14,7 @@ const projects = [
   { id: 3, image: myPortfolio },
   { id: 4, image: petShop },
   { id: 5, image: mntn },
+  { id: 5, image: insta },
 ];
 
 const ProjectCarousel: React.FC = () => {
