@@ -120,7 +120,6 @@
     border: 2px solid #45D3F5;
     background-color: rgba(69, 211, 245, 0.1);
     padding: 20px;
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,6 +135,44 @@
     color: #C4F4FF;
     text-align: center;
     font-family: "Montserrat", sans-serif;
+  }
+
+  .modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 30%;
+    width: 40%;
+    height: 30%;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: #060d17;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #c4f4ff;
+    text-align: center;
+    color: #c4f4ff;
+    
+  }
+  
+  
+  .modalButton:hover {
+    background: #34a9d3;
   }
   
   
