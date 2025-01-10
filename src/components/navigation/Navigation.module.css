@@ -16,9 +16,11 @@
 }
 
 .logo {
-  height: 50px;
-  cursor: pointer;
-  margin-left: 40px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    left: 40px;
 }
 
 .menu {
@@ -43,6 +45,9 @@
 }
 
 .languageSwitcher {
+  position: absolute;
+  top: 15px;
+  right: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,17 +88,35 @@
 }
 
 @media (max-width: 992px){
- .menu li a  {
-  font-size: 12px;
- }
- .logo{
-  margin-left: 20px;
- }
+
 }
 
 
 /* Адаптивный дизайн для маленьких экранов */
 @media (max-width: 768px) {
+  .menu{
+    height: 40vh;
+    width: 100vw;
+   }
+  .menu li a  {
+   font-size: 14px;
+  }
+  .logo{
+   margin-left: 0px;
+   top: 0;
+  }
+ .languageSwitcher {
+ width: 100vw;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 0 auto;
+ position: relative;
+ padding-left: 30px;
+ }
+ .langBtn{
+   font-size: 12px;
+ }
   .navigation {
     height: 80px; /* Сохраняем высоту навбара */
     background-size: 100vw 50px;
@@ -128,6 +151,8 @@
   .menuOpen li {
     margin: 5px 0;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
   }
 
   .menuOpen li a {
