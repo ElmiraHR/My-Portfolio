@@ -1,9 +1,9 @@
 .scrollCircle {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   width: 60px;
   height: 60px;
-  background-color: rgba(196, 244, 255, 0.3); /* Прозрачный фон */
+  background-color: rgba(196, 244, 255, 0.2); /* Прозрачный фон */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -21,15 +21,24 @@
 }
 
 .scrollCircle.left {
-  left: 20px;
+  left: 10px;
 }
 
 .scrollCircle.right {
-  right: 20px;
+  right: 10px;
 }
 
 .arrow {
   font-size: 24px;
   font-weight: bold;
   color: #060d17;
+}
+@media (max-width: 768px) {
+  .scrollCircle {
+    width: 35px;
+    height: 35px;
+  }
+  .arrow{
+    font-size: 18px;
+  }
 }
