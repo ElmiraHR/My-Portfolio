@@ -1,12 +1,89 @@
+.carouselContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 10px;
+}
+
 .carousel {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+}
+
+.pdfSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdfImage {
+  max-height: 600px;
+  width: auto;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+  margin: 0 auto;
+}
+
+.pdfImage:hover {
+  transform: scale(1.05);
+}
+
+.fileName {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* Кастомная пагинация */
+.paginationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationButton {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.paginationButton:hover {
+  background-color: #f0f0f0;
+}
+
+.activeButton {
+  font-weight: bold;
+  color: #060D17;
+  background-color: #dbf7fd;
+}
+
+
+@media (max-width: 992px) {
+  .carousel{
+   justify-content: center;
+   width: 75vw;
   }
-  
-  .pdfViewer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
+  .pdfImage {
+    max-width: 100%; /* Уменьшаем ширину на небольших экранах */
   }
-  
+}
+
+@media (max-width: 480px) {
+ 
+  .pdfImage {
+    max-width: 80%; /* Еще больше уменьшаем ширину на очень маленьких экранах */
+    
+  }
+}

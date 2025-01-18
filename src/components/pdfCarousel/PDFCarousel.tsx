@@ -1,35 +1,60 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import { Worker, Viewer } from "@react-pdf-viewer/core";
-import "@react-pdf-viewer/core/lib/styles/index.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import styles from "./PDFCarousel.module.css";
 
 interface PDFCarouselProps {
-  pdfFiles: string[]; // Список путей к PDF-файлам
+  files: { preview: string; pdf: string; name: string }[];
 }
 
-const PDFCarousel: React.FC<PDFCarouselProps> = ({ pdfFiles }) => {
+const PDFCarousel: React.FC<PDFCarouselProps> = ({ files }) => {
+  const sliderRef = useRef<any>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (index: number) => setCurrentSlide(index),
+  };
+
+  const goToSlide = (index: number) => {
+    sliderRef.current?.slickGoTo(index);
   };
 
   return (
-    <Slider {...settings} className={styles.carousel}>
-      {pdfFiles.map((pdf, index) => (
-        <div key={index} className={styles.pdfViewer}>
-        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.worker.min.js`}>
+    <div className={styles.carouselContainer}>
+      <Slider ref={sliderRef} {...settings} className={styles.carousel}>
+        {files.map((file, index) => (
+          <div key={index} className={styles.pdfSlide}>
+            <img
+              src={file.preview}
+              alt={file.name}
+              className={styles.pdfImage}
+              onClick={() => window.open(file.pdf, "_blank")}
+            />
+            <p className={styles.fileName}>{file.name}</p>
+          </div>
+        ))}
+      </Slider>
 
-            <Viewer fileUrl={pdf} />
-          </Worker>
-        </div>
-      ))}
-    </Slider>
+      {/* Кастомная пагинация */}
+      <div className={styles.paginationContainer}>
+        {files.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.paginationButton} ${
+              index === currentSlide ? styles.activeButton : ""
+            }`}
+            onClick={() => goToSlide(index)}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 };
 

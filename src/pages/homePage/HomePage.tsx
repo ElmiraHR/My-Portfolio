@@ -6,16 +6,14 @@ import styles from "./HomePage.module.css";
 import HeroStick from "../../components/heroSticks/HeroStick";
 import CustomButton from "../../components/buttons/CustomButton";
 import PDFCarousel from "../../components/pdfCarousel/PDFCarousel";
-
-// Пример PDF-файлов
-const cvFiles = ["/pdfs/cv1.pdf", "/pdfs/cv2.pdf"];
-const recommendationFiles = ["/pdfs/rec1.pdf", "/pdfs/rec2.pdf"];
-const certificateFiles = ["/pdfs/cert1.pdf", "/pdfs/cert2.pdf"];
+import { cvFiles, recommendationFiles, certificateFiles } from "../../assets/filePaths";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [modalContent, setModalContent] = useState<string[]>([]);
+  const [modalContent, setModalContent] = useState<
+    { preview: string; pdf: string; name: string }[]
+  >([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -32,7 +30,7 @@ const Home: React.FC = () => {
     }
   }, []);
 
-  const openModal = (files: string[]) => {
+  const openModal = (files: { preview: string; pdf: string; name: string }[]) => {
     setModalContent(files);
     setIsModalOpen(true);
   };
@@ -100,7 +98,7 @@ const Home: React.FC = () => {
         overlayClassName={styles.modalOverlay}
         contentLabel="PDF Viewer Modal"
       >
-        <PDFCarousel pdfFiles={modalContent} />
+        <PDFCarousel files={modalContent} />
         <button onClick={closeModal} className={styles.closeButton}>
           Close
         </button>

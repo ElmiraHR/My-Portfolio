@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "ansi-html-community": "^0.0.8",
     "cra-template-typescript": "1.2.0",
     "i18next": "^23.2.3",
