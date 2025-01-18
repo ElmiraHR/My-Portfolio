@@ -99,6 +99,7 @@ box-shadow: inset 0px -19px 9px 10px #060d17;
   cursor: pointer;
 }
 
+
 @media (max-width: 1200px){
   .stickRight{
     margin-right: 40px;

@@ -19,7 +19,7 @@
 
 .pdfImage {
   max-height: 600px;
-  width: auto;
+  max-width: 100%;
   cursor: pointer;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -45,6 +45,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  gap: 20px;
 }
 
 .paginationButton {
@@ -53,10 +54,14 @@
   font-size: 16px;
   cursor: pointer;
   color: #333;
-  margin: 0 5px;
-  padding: 5px 10px;
+  /* margin: 0 5px; */
+  /* padding: 5px 10px; */
+  display: flex;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
 .paginationButton:hover {
@@ -68,7 +73,6 @@
   color: #060D17;
   background-color: #dbf7fd;
 }
-
 
 @media (max-width: 992px) {
   .carousel{
