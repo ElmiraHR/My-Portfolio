@@ -1,7 +1,7 @@
 export const cvFiles = [
     {
       preview: "/assets/files/cv/de_cv.png",
-      pdf: "/assets/files/cv/Deutsch_CV.pdf",
+      pdf: "/assets/files/cv/DeutschCV.pdf",
       name: "СV(Deutsch)",
     },
     {
@@ -15,13 +15,13 @@ export const cvFiles = [
   export const recommendationFiles = [
     {
       preview: "/assets/files/recom/herren.png",
-      pdf: "/assets/files/recom/Recommendation_Letter_Elmira_1.pdf",
-      name: "Recommendation Letter 1",
+      pdf: "/assets/files/recom/RecommendationLetter12/06/24.pdf",
+      name: "Recommendation Letter Berlin",
     },
     {
       preview: "/assets/files/recom/tailbook.png",
-      pdf: "/assets/files/recom/Recommendation_Letter_Elmira_Hrachyan.pdf",
-      name: "Recommendation Letter 2",
+      pdf: "/assets/files/recom/RecommendationLetter10/17/2024.pdf",
+      name: "Recommendation Letter Montenegro",
     },
   ];
   
@@ -33,12 +33,12 @@ export const cvFiles = [
     },
     {
       preview: "/assets/files/zertifikat/it_de.png",
-      pdf: "/assets/files/zertifikat/ITde.pdf",
+      pdf: "/assets/files/zertifikat/IT_de.pdf",
       name: "IT Certificate ",
     },
     {
       preview: "/assets/files/zertifikat/it_en.png",
-      pdf: "/assets/files/zertifikat/ITen.pdf",
+      pdf: "/assets/files/zertifikat/IT_en.pdf",
       name: "IT Certificate ",
     },
     {
