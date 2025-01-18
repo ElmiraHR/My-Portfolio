@@ -1,0 +1,75 @@
+.experienceContainer {
+    min-height: 100vh;
+    background-color: #060d17;
+    background-image: url("../../assets/expir_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .pageTitle {
+    width: 295px; /* Ширина как у стиков */
+    height: 40px;
+    border-radius: 16px;
+    border: 2px solid #45D3F5;
+    background-color: rgba(69, 211, 245, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    color: #c4f4ff;
+  }
+  
+  .experienceList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 80%;
+    background-color: rgba(6, 13, 23, 0.75);
+    border-radius: 20px;
+    border: 1px solid #c4f4ff;
+    word-wrap: break-word; /* Перенос слов на следующую строку */
+    overflow-wrap: break-word; /* Поддержка переноса для длинных слов */
+    padding: 10px; /* Увеличиваем внутренние отступы */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  }
+  
+  .experienceItem {
+    width: 100%;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    box-sizing: border-box; /* Для предотвращения выхода текста за границы */
+  }
+  
+  .company {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .role {
+    font-size: 16px;
+    color: #c4f4ff;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  

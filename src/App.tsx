@@ -5,6 +5,7 @@ import SkillsPage from './pages/skilsPage/SkillsPage';
 import ProjectPage from './pages/projectsPage/ProjectPage';
 import './App.css';
 import ContactForm from './components/contactsForm/ContactForm';
+import ExperiencePage from './pages/experiencePage/ExperiencePage';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       </div>
       <div className="section">
         <SkillsPage />
+      </div>
+      <div className='section'>
+       <ExperiencePage/>
       </div>
       <div className="section">
         <ProjectPage />
