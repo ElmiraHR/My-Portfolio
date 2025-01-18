@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./ExperiencePage.module.css";
 
@@ -77,30 +77,53 @@ const ExperienceItem: React.FC<{
   description: string;
 }> = ({ company, role, location, date, description }) => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (descriptionRef.current) {
-      descriptionRef.current.innerHTML = "";
-    }
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-    const textArray = description.split("");
-    let index = 0;
-
-    const typeEffect = () => {
-      if (descriptionRef.current && index < textArray.length) {
-        descriptionRef.current.innerHTML += textArray[index];
-        index++;
-      } else {
-        clearInterval(interval);
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
       }
     };
 
-    const interval = setInterval(typeEffect, 30);
-    return () => clearInterval(interval);
-  }, [description]);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Проверяем начальное состояние
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (descriptionRef.current && isVisible) {
+      descriptionRef.current.innerHTML = "";
+      const textArray = description.split("");
+      let index = 0;
+
+      const typeEffect = () => {
+        if (descriptionRef.current && index < textArray.length) {
+          descriptionRef.current.innerHTML += textArray[index];
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      };
+
+      const interval = setInterval(typeEffect, 30);
+      return () => clearInterval(interval);
+    }
+  }, [description, isVisible]);
 
   return (
-    <div className={styles.experienceItem}>
+    <div ref={containerRef} className={styles.experienceItem}>
       <h3 className={styles.company}>{company}</h3>
       <p className={styles.role}>
         {role} • {location} • {date}
