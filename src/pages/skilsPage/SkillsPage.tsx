@@ -14,7 +14,7 @@ const SkillsPage: React.FC = () => {
         const windowHeight = window.innerHeight;
 
         // Проверяем видимость заголовка
-        if (rect.top < windowHeight - rect.height / 3) {
+        if (rect.top < windowHeight - rect.height / 2) {
           setIsTitleVisible(true);
         }
       }
@@ -81,6 +81,21 @@ const SkillsPage: React.FC = () => {
         />
       </div>
 
+      {/* Новый стик с языками */}
+      <div className={styles.rightContainerBottom}>
+    <SkillStick
+      title="Languages"
+      items={[
+      "German: B2+",
+      "English: B2",
+      "Russian: C1",
+      "Armenian: Native/C1",
+    ]}
+    direction="right" /* Указываем направление "справа" */
+     />
+     </div>
+
+      {/* Социальные ссылки */}
       <div className={styles.socialLinks}>
         <CustomButton
           width="200px"

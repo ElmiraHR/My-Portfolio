@@ -1,85 +1,92 @@
 .skillsContainer {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-    gap: 40px;
-    background-image: url("../../assets/girl.svg"), url("../../assets/vector.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: right center, left center; /* Первая картинка справа, вторая слева */
-    background-size: contain, contain;
-    background-size: 50% auto, 30%auto; /* Ширина первой картинки 400px, второй — 650px */
-  }
-  
-  .leftContainer,
-  .rightContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 250px;
-  }
-  
-  .leftContainer {
-    align-items: center;
-   
-  }
-  
-  .rightContainer {
-    align-items: flex-end;
-    justify-content: center;
-  }
-  
-   .socialLinks{
-    display: flex;
-    justify-content: center;
-   }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 0px;
+  background-image: url("../../assets/girl.svg"), url("../../assets/vector.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right center, left center;
+  background-size: contain, contain;
+  background-size: 50% auto, 30% auto;
+}
 
-   /* Контейнер для заголовка */
+.leftContainer,
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 250px;
+}
+
+.leftContainer {
+  align-items: center;
+}
+
+.rightContainer {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.rightContainerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Выравнивание по правому краю */
+  justify-content: flex-end;
+  margin: 15px 0;
+  gap: 20px;
+}
+
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+}
+
+/* Контейнер для заголовка */
 .sectionTitleContainer {
-    width: 295px; /* Ширина как у стиков */
-    height: 40px;
-    border-radius: 16px;
-    border: 2px solid #45D3F5;
-    background-color: rgba(69, 211, 245, 0.1);
-    padding: 20px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 4s ease, transform 4s ease;
-  }
-  
-  .sectionTitleContainer.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .sectionTitleContainer.hidden {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  
-  /* Стиль для заголовка */
-  .sectionTitle {
-    font-size: 24px;
-    font-weight: bold;
-    color: #C4F4FF;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-  }
-  
+  width: 295px;
+  height: 40px;
+  border-radius: 16px;
+  border: 2px solid #45D3F5;
+  background-color: rgba(69, 211, 245, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 4s ease, transform 4s ease;
+}
 
-  @media (max-width: 992px){
-    .skillsContainer {
-        flex-direction: column;
-        gap: 20px;
-        margin: 0 auto;
-    }
-    .sectionTitleContainer{
-        width: 80%;
-        margin: 0 auto;
-    }
+.sectionTitleContainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitleContainer.hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Стиль для заголовка */
+.sectionTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #C4F4FF;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 992px) {
+  .skillsContainer {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
   }
- 
+  .sectionTitleContainer {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

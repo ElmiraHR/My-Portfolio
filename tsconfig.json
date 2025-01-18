@@ -1,21 +1,22 @@
 {
-    "compilerOptions": {
-      "resolveJsonModule": true,
-      "target": "ES6", // Компилируем код в стандарт ES6
-      "module": "ESNext", // Используем современный модульный формат
-      "jsx": "react", // Поддержка JSX для React
-      "strict": true, // Включаем строгий режим
-      "esModuleInterop": true, // Совместимость с CommonJS
-      "skipLibCheck": true, // Пропускаем проверку типов библиотек
-      "forceConsistentCasingInFileNames": true ,// Регистрозависимость для файлов
-      "moduleResolution": "node",
-    "baseUrl": "./src",
+  "compilerOptions": {
+    "target": "ES6", // Компилируем код в стандарт ES6
+    "module": "ESNext", // Используем современный модульный формат
+    "jsx": "react", // Поддержка JSX для React
+    "strict": true, // Включаем строгий режим
+    "esModuleInterop": true, // Совместимость с CommonJS
+    "skipLibCheck": true, // Пропускаем проверку типов библиотек
+    "forceConsistentCasingInFileNames": true, // Регистрозависимость для файлов
+    "moduleResolution": "node",
+    "baseUrl": "./", // Убедитесь, что baseUrl указывает на корень проекта
     "paths": {
-      "*": ["node_modules/*", "src/*"]
+      "@/*": ["src/*"] // Создаем алиас для удобства импорта
     },
-    "allowJs": true,
-    },
-    "exclude": ["node_modules", "build"], // Исключаем ненужные папки
-    "include": ["src", "types", "src/global.d.ts"]
-  }
-  
+    "allowJs": true, // Поддержка JavaScript файлов
+    "resolveJsonModule": true, // Поддержка импорта JSON
+    "outDir": "./build", // Папка для скомпилированных файлов
+    "types": ["node"] // Явно указываем типы Node.js
+  },
+  "include": ["src/**/*", "types", "src/global.d.ts"], // Подключаем папки и файлы
+  "exclude": ["node_modules", "build", "dist"] // Исключаем ненужные папки
+}
