@@ -3,12 +3,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px; /* Высота навигации */
-  background-image: url('../../assets/nav_bg.svg'); /* Путь к изображению */
-  background-size: 100vw 90px; /* Ширина 100% экрана, высота подгоняется */
+  height: 80px;
+  background-image: url("../../assets/nav_bg.svg");
+  background-size: 100vw 90px;
   background-repeat: no-repeat;
-  background-position: top center; /* Расположение фона */
+  background-position: top center;
   padding: 0 20px;
+  transition: all 0.3s ease; /* Плавный переход для фиксации */
+  z-index: 100;
+}
+
+.navigation.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(6, 13, 23, 0.9); /* Фон при фиксации */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень */
+  z-index: 1000;
 }
 
 .logoContainer {

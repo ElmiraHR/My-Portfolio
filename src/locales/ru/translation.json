@@ -1,8 +1,8 @@
 {
   "navigation": {
     "home": "Главная",
-    "about": "Oбo мне",
     "skills": "Навыки",
+    "experience": "Опыт",
     "projects": "Проекты",
     "contacts": "Контакты"
   },

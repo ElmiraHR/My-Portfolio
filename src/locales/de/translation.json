@@ -1,8 +1,8 @@
 {
   "navigation": {
-    "home": "Home",
-    "about": "Über mich",
+    "home": "Startseite",
     "skills": "Fähigkeiten",
+    "experience": "Erfahrung",
     "projects": "Projekte",
     "contacts": "Kontakte"
   },

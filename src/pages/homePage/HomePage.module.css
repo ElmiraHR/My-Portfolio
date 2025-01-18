@@ -41,8 +41,7 @@ box-shadow: inset 0px -19px 9px 10px #060d17;
   display: flex;
   flex-direction: column;
   width: 90vw;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 80px;
   gap: 20px;
 }
 

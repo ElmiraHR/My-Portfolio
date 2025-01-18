@@ -54,22 +54,22 @@ const Home: React.FC = () => {
       </video>
       <div className={styles.sticksContainer}>
         <div className={styles.stickLeft}>
-          <HeroStick
-            className="leftStick"
-            heading={t("homepage.headingLeft")}
-            text={t("homepage.textLeft")}
-            buttonLabel={t("homepage.buttonLeft")}
-            onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-          />
+        <HeroStick
+  className="leftStick"
+  heading={t("homepage.headingLeft")}
+  text={t("homepage.textLeft")}
+  buttonLabel={t("homepage.buttonLeft")}
+  targetId="projects" // Указываем ID для перехода на проекты
+/>
         </div>
         <div className={styles.stickRight}>
-          <HeroStick
-            className="rightStick"
-            heading={t("homepage.headingRight")}
-            text={t("homepage.textRight")}
-            buttonLabel={t("homepage.buttonRight")}
-            onButtonClick={() => window.scrollTo(0, document.body.scrollHeight)}
-          />
+        <HeroStick
+  className="rightStick"
+  heading={t("homepage.headingRight")}
+  text={t("homepage.textRight")}
+  buttonLabel={t("homepage.buttonRight")}
+  targetId="contacts" // Указываем ID для перехода на контакты
+/>
         </div>
       </div>
       <div className={styles.heroButtons}>
