@@ -1,12 +1,12 @@
 export const cvFiles = [
     {
-      preview: "/assets/files/cv/de_cv.png",
-      pdf: "/assets/files/cv/DeutschCV.pdf",
+      preview: "/assets/files/cv/de.png",
+      pdf: "/assets/files/cv/Deutsch2025.pdf",
       name: "СV(Deutsch)",
     },
     {
-      preview: "/assets/files/cv/eng_cv.png",
-      pdf: "/assets/files/cv/EnglishCV.pdf",
+      preview: "/assets/files/cv/eng.png",
+      pdf: "/assets/files/cv/English2025.pdf",
       name: "CV(English)",
     },
   ];

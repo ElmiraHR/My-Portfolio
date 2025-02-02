@@ -42,7 +42,7 @@ const ContactForm: React.FC = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3001/send-email", {
+      const response = await fetch("https://topwebcraft.com/send-email.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -54,7 +54,7 @@ const ContactForm: React.FC = () => {
         setTimeout(() => {
           setIsModalVisible(false);
           (event.target as HTMLFormElement).reset();
-        }, 30000);
+        }, 3000);
       } else {
         setModalMessage("Failed to send the message. Please try again later.");
         setIsModalVisible(true);
@@ -104,7 +104,8 @@ const ContactForm: React.FC = () => {
             placeholder="Your Message"
             required
           ></textarea>
-          <CustomButton width="90%" text="Send" onClick={() => {}} />
+          <CustomButton width="90%" text="Send" type="submit" />
+
         </form>
       </div>
       <div className={styles.contactInfo}>
