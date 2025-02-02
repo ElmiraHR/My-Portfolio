@@ -6,6 +6,7 @@ import ExperiencePage from "./pages/experiencePage/ExperiencePage";
 import ProjectPage from "./pages/projectsPage/ProjectPage";
 import ContactForm from "./components/contactsForm/ContactForm";
 import ScrollCircle from "./components/sсrollCircle/ScrollCircle";
+import Footer from "./components/footer/Footer";  // Добавлен импорт футера
 import "./App.css";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      const newSectionIndex = sections.findIndex((id, index) => {
+      const newSectionIndex = sections.findIndex((id) => {
         const sectionElement = document.getElementById(id);
         if (!sectionElement) return false;
 
@@ -77,6 +78,7 @@ function App() {
         onClick={() => scrollToSection("next")}
         position="right"
       />
+      <Footer /> {/* Добавлен футер */}
     </div>
   );
 }

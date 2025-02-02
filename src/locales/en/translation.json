@@ -6,7 +6,12 @@
     "projects": "Projects",
     "contacts": "Contacts"
   },
-
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Privacy Policy",
+    "impressumContent": "Portfolio\nEmail: elhrachyan@gmail.com\nResponsible for content: Elmira",
+    "privacyContent": "This website does not collect personal data. Information provided through the contact form is sent directly to elhrachyan@gmail.com and is not stored on the server. The data will only be used to respond to inquiries and will not be shared with third parties."
+  },
   "homepage": {
     "headingLeft": "Hi there, I'm Elmira!",
     "textLeft": "Welcome to my portfolio! I'm a web developer who loves turning creative ideas into functional, beautiful websites. Let’s explore the magic of clean code and captivating design together.",

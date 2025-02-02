@@ -1,0 +1,61 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #060d17;
+    color: #c4f4ff;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .left {
+    font-size: 14px;
+  }
+  
+  .right button {
+    background: none;
+    border: none;
+    color: #c4f4ff;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+  }
+  

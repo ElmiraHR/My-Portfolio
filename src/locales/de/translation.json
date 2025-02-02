@@ -6,7 +6,12 @@
     "projects": "Projekte",
     "contacts": "Kontakte"
   },
-
+  "footer": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "impressumContent": "Portfolio \nE-Mail: elhrachyan@gmail.com\nVerantwortlich für den Inhalt: Elmira",
+    "privacyContent": "Diese Website sammelt keine personenbezogenen Daten. Informationen, die über das Kontaktformular bereitgestellt werden, werden direkt an elhrachyan@gmail.com gesendet und nicht auf dem Server gespeichert. Die Daten werden nur zur Beantwortung von Anfragen verwendet und nicht an Dritte weitergegeben."
+  },
   "homepage": {
     "headingLeft": "Hallo, ich bin Elmira!",
     "textLeft": "Willkommen! Ich bin eine Webentwicklerin, die kreative Ideen in funktionale und schöne Websites verwandelt. Lassen Sie uns gemeinsam die Magie von sauberem Code und Design entdecken.",
