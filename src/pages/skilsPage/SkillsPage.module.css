@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 40px;
-  gap: 0px;
+  gap: 10px;
   background-image: url("../../assets/girl.svg"), url("../../assets/vector.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: right center, left center;

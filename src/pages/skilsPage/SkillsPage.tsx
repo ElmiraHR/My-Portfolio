@@ -63,6 +63,7 @@ const SkillsPage: React.FC = () => {
             "Node.js: Scalable server-side applications.",
             "Express.js: Fast APIs for backend functionality.",
             "MongoDB: Storing, querying, and managing data.",
+            "PHP",
           ]}
           direction="right"
         />
