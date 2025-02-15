@@ -4,6 +4,13 @@ import styles from "./ExperiencePage.module.css";
 
 const experiences = [
   {
+    companyKey: "experience.company7",
+    roleKey: "experience.role7",
+    locationKey: "experience.location7",
+    dateKey: "experience.date7",
+    descriptionKey: "experience.description7",
+  },
+  {
     companyKey: "experience.company1",
     roleKey: "experience.role1",
     locationKey: "experience.location1",
