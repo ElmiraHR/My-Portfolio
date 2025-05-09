@@ -46,6 +46,7 @@ const SkillsPage: React.FC = () => {
             "HTML5 & CSS3: Crafting responsive layouts.",
             "JavaScript (ES6+): Developing interactive web applications.",
             "React: Building scalable user interfaces.",
+            "Vue.js: Building performant and modular user interfaces.",
             "Redux: State management for complex apps.",
             "Vite: Fast build tools for React.",
             "Bootstrap: Responsive design with pre-built components.",
@@ -62,7 +63,7 @@ const SkillsPage: React.FC = () => {
           items={[
             "Node.js: Scalable server-side applications.",
             "Express.js: Fast APIs for backend functionality.",
-            "MongoDB: Storing, querying, and managing data.",
+            "MongoDB, MySql, NoSql",
             "PHP",
           ]}
           direction="right"
@@ -87,9 +88,9 @@ const SkillsPage: React.FC = () => {
     <SkillStick
       title="Languages"
       items={[
-      "German: B2+",
-      "English: B2",
-      "Russian: C1",
+      "German: Native/C1",
+      "English: Professional Proficiency/B2",
+      "Russian: Native/C1",
       "Armenian: Native/C1",
     ]}
     direction="right" /* Указываем направление "справа" */

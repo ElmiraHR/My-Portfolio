@@ -23,6 +23,11 @@ export const cvFiles = [
       pdf: "/assets/files/recom/RecommendationLetter10/17/2024.pdf",
       name: "Recommendation Letter Montenegro",
     },
+    {
+      preview: "/assets/files/recom/Kunst.png",
+      pdf: "/assets/files/recom/RecommendationLetter11/Kunstschule.pdf",
+      name: "Recommendation Letter Kunstschule Berlin",
+    },
   ];
   
   export const certificateFiles = [

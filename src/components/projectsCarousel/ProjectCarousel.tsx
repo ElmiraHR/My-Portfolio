@@ -7,14 +7,20 @@ import myPortfolio from "../../assets/myPortfolio.svg";
 import petShop from "../../assets/petShop.svg";
 import mntn from "../../assets/mntn.svg";
 import insta from "../../assets/insta.svg";
+import rick from "../../assets/Rick.svg";
+import nova from "../../assets/nova.svg";
+import kunst from "../../assets/kunst.svg";
 
 const projects = [
-  { id: 1, image: meetup },
+  { id: 1, image: nova },
   { id: 2, image: herren },
   { id: 3, image: myPortfolio },
-  { id: 4, image: petShop },
-  { id: 5, image: mntn },
-  { id: 5, image: insta },
+  { id: 4, image: meetup },
+  { id: 5, image: kunst },
+  { id: 6, image: petShop },
+  { id: 7, image: mntn },
+  { id: 8, image: insta },
+  { id: 9, image: rick },
 ];
 
 const ProjectCarousel: React.FC = () => {
